@@ -1,0 +1,31 @@
+{
+  "collectionName": "components_home_trusts",
+  "info": {
+    "displayName": "Trust"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "component",
+      "component": "common.description",
+      "repeatable": true
+    },
+    "message": {
+      "type": "text"
+    },
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    }
+  },
+  "config": {}
+}

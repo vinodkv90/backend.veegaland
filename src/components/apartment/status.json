@@ -1,0 +1,18 @@
+{
+  "collectionName": "components_apartment_statuses",
+  "info": {
+    "displayName": "Status"
+  },
+  "options": {},
+  "attributes": {
+    "apartment_status": {
+      "type": "enumeration",
+      "enum": [
+        "on going",
+        "sample ready",
+        "new launch"
+      ]
+    }
+  },
+  "config": {}
+}

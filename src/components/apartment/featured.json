@@ -1,0 +1,15 @@
+{
+  "collectionName": "components_apartment_featureds",
+  "info": {
+    "displayName": "Featured"
+  },
+  "options": {},
+  "attributes": {
+    "section": {
+      "type": "component",
+      "component": "apartment.section",
+      "repeatable": true
+    }
+  },
+  "config": {}
+}

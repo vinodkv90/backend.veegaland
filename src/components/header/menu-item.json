@@ -1,0 +1,16 @@
+{
+  "collectionName": "components_header_menu_items",
+  "info": {
+    "displayName": "Menu Item"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "url": {
+      "type": "string"
+    }
+  },
+  "config": {}
+}

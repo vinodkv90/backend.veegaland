@@ -1,0 +1,20 @@
+{
+  "collectionName": "components_header_projects",
+  "info": {
+    "displayName": "Projects"
+  },
+  "options": {},
+  "attributes": {
+    "button": {
+      "type": "component",
+      "component": "common.button",
+      "repeatable": false
+    },
+    "locations": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::location.location"
+    }
+  },
+  "config": {}
+}

@@ -1,0 +1,20 @@
+{
+  "collectionName": "components_header_main_menus",
+  "info": {
+    "displayName": "Main Menu"
+  },
+  "options": {},
+  "attributes": {
+    "menu_item": {
+      "type": "component",
+      "component": "header.menu-item",
+      "repeatable": true
+    },
+    "projects": {
+      "type": "component",
+      "component": "header.projects",
+      "repeatable": false
+    }
+  },
+  "config": {}
+}

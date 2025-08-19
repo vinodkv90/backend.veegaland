@@ -1,0 +1,26 @@
+{
+  "collectionName": "components_home_our_customers",
+  "info": {
+    "displayName": "Our customers"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string"
+    },
+    "testimonials": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::testimonial.testimonial"
+    },
+    "handovers": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::handover.handover"
+    }
+  },
+  "config": {}
+}

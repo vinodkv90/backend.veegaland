@@ -16,6 +16,15 @@
     },
     "url": {
       "type": "string"
+    },
+    "widgets": {
+      "type": "dynamiczone",
+      "components": [
+        "apartment.featured",
+        "home.trust",
+        "apartment.section",
+        "home.our-customers"
+      ]
     }
   }
 }

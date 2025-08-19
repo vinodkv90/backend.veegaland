@@ -1,0 +1,67 @@
+{
+  "collectionName": "components_apartment_sections",
+  "info": {
+    "displayName": "Section"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    },
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "logo": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "button": {
+      "type": "component",
+      "component": "common.button",
+      "repeatable": false
+    },
+    "whatsapp": {
+      "type": "component",
+      "component": "common.button",
+      "repeatable": false
+    },
+    "floor": {
+      "type": "string"
+    },
+    "krera": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "apartment_status": {
+      "type": "enumeration",
+      "enum": [
+        "new launch",
+        "on going",
+        "sample ready"
+      ]
+    }
+  },
+  "config": {}
+}

@@ -1,0 +1,15 @@
+{
+  "collectionName": "components_header_sub_menus",
+  "info": {
+    "displayName": "Sub Menu"
+  },
+  "options": {},
+  "attributes": {
+    "sub_menu": {
+      "type": "component",
+      "component": "header.menu-item",
+      "repeatable": true
+    }
+  },
+  "config": {}
+}
