@@ -70,8 +70,7 @@ export interface HeaderMainMenu extends Struct.ComponentSchema {
     displayName: 'Main Menu';
   };
   attributes: {
-    menu_item: Schema.Attribute.Component<'header.menu-item', true>;
-    projects: Schema.Attribute.Component<'header.projects', false>;
+    menu_item: Schema.Attribute.Component<'header.sub-menu', true>;
   };
 }
 
@@ -81,6 +80,7 @@ export interface HeaderMenuItem extends Struct.ComponentSchema {
     displayName: 'Menu Item';
   };
   attributes: {
+    location: Schema.Attribute.Relation<'oneToOne', 'api::location.location'>;
     title: Schema.Attribute.String;
     url: Schema.Attribute.String;
   };
@@ -103,7 +103,9 @@ export interface HeaderSubMenu extends Struct.ComponentSchema {
     displayName: 'Sub Menu';
   };
   attributes: {
-    sub_menu: Schema.Attribute.Component<'header.menu-item', true>;
+    sub_menu_item: Schema.Attribute.Component<'header.menu-item', true>;
+    title: Schema.Attribute.String;
+    url: Schema.Attribute.String;
   };
 }
 

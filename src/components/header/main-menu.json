@@ -7,13 +7,8 @@
   "attributes": {
     "menu_item": {
       "type": "component",
-      "component": "header.menu-item",
+      "component": "header.sub-menu",
       "repeatable": true
-    },
-    "projects": {
-      "type": "component",
-      "component": "header.projects",
-      "repeatable": false
     }
   },
   "config": {}

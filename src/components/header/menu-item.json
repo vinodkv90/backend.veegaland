@@ -10,6 +10,11 @@
     },
     "url": {
       "type": "string"
+    },
+    "location": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::location.location"
     }
   },
   "config": {}

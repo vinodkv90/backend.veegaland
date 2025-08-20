@@ -5,7 +5,13 @@
   },
   "options": {},
   "attributes": {
-    "sub_menu": {
+    "title": {
+      "type": "string"
+    },
+    "url": {
+      "type": "string"
+    },
+    "sub_menu_item": {
       "type": "component",
       "component": "header.menu-item",
       "repeatable": true
