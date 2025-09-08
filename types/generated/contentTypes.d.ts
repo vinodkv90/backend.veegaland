@@ -416,6 +416,10 @@ export interface ApiApartmentApartment extends Struct.CollectionTypeSchema {
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
+    description: Schema.Attribute.Text;
+    floor: Schema.Attribute.String;
+    image: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    krera: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
@@ -423,12 +427,19 @@ export interface ApiApartmentApartment extends Struct.CollectionTypeSchema {
     > &
       Schema.Attribute.Private;
     location: Schema.Attribute.Relation<'manyToOne', 'api::location.location'>;
+    project_logo: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios'
+    >;
+    project_status: Schema.Attribute.Enumeration<
+      ['new launch', 'on going', 'sample ready', 'completed', 'Ready to Occupy']
+    >;
     publishedAt: Schema.Attribute.DateTime;
     title: Schema.Attribute.String;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
     url: Schema.Attribute.UID<'title'>;
+    whatsapp: Schema.Attribute.Component<'common.button', false>;
   };
 }
 
@@ -707,6 +718,38 @@ export interface ApiTestimonialTestimonial extends Struct.CollectionTypeSchema {
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
+  };
+}
+
+export interface ApiUrlMapperUrlMapper extends Struct.CollectionTypeSchema {
+  collectionName: 'url_mappers';
+  info: {
+    displayName: 'url-mapper';
+    pluralName: 'url-mappers';
+    singularName: 'url-mapper';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    cid: Schema.Attribute.Integer;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::url-mapper.url-mapper'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    title: Schema.Attribute.String;
+    type: Schema.Attribute.Enumeration<['single', 'collection']>;
+    uid: Schema.Attribute.String;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    url: Schema.Attribute.String;
   };
 }
 
@@ -1257,6 +1300,7 @@ declare module '@strapi/strapi' {
       'api::media.media': ApiMediaMedia;
       'api::milestone.milestone': ApiMilestoneMilestone;
       'api::testimonial.testimonial': ApiTestimonialTestimonial;
+      'api::url-mapper.url-mapper': ApiUrlMapperUrlMapper;
       'api::vlog.vlog': ApiVlogVlog;
       'plugin::content-releases.release': PluginContentReleasesRelease;
       'plugin::content-releases.release-action': PluginContentReleasesReleaseAction;

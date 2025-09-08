@@ -23,6 +23,57 @@
       "relation": "manyToOne",
       "target": "api::location.location",
       "inversedBy": "apartments"
+    },
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "project_logo": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "floor": {
+      "type": "string"
+    },
+    "krera": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "project_status": {
+      "type": "enumeration",
+      "enum": [
+        "new launch",
+        "on going",
+        "sample ready",
+        "completed",
+        "Ready to Occupy"
+      ]
+    },
+    "description": {
+      "type": "text"
+    },
+    "whatsapp": {
+      "type": "component",
+      "component": "common.button",
+      "repeatable": false
     }
   }
 }

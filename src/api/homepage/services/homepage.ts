@@ -4,6 +4,7 @@
 
 import { factories } from '@strapi/strapi';
 import GetWidgetsData from '../../../utils/getWidgetsData';
+import { title } from 'process';
 
 export default factories.createCoreService('api::homepage.homepage', ({ strapi}) => ({
     async find(ctx): Promise<any> {
@@ -47,6 +48,13 @@ export default factories.createCoreService('api::homepage.homepage', ({ strapi})
             }
         });
 
-        return await GetWidgetsData(homepage);
+        const widgetData =  await GetWidgetsData(homepage);
+
+        return {
+            title: homepage?.title,
+            url: homepage?.url,
+            widges: widgetData,
+        }
+
     }
 }));

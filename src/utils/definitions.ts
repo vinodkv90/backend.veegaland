@@ -1,10 +1,11 @@
+import { title } from "process"
 import GetImage from "./getImage"
 
 export default {
     async featuredAppartment(data): Promise<any> {
-        // return data
         return {
-            widget_type: 'featuredAppartment',
+            id: data?.id,
+            widget_type: 'featuredAppartmentWidget',
             data: await Promise.all(
                 data?.section?.map(async (item) => {
                     return {
@@ -24,15 +25,59 @@ export default {
         }
     },
     async appartmentSections(data) {
-        return data
+        return {
+            id: data?.id,
+            widget_type: 'appartmentSectionsWidget',
+            data: {
+                title: data?.title,
+                description: data?.description,
+                floor: data?.floor,
+                apartment_status: data?.apartment_status,
+                image: await GetImage(data?.image),
+                logo: await GetImage(data?.logo),
+                button: data?.button,
+                krera: await GetImage(data?.krera),
+                whatsapp: data?.whatsapp
+            },
+            component: data?.__component
+        }
     },
     async ourCustomers(data) {
-        return data
+        return {
+            id: data?.id,
+            widget_type: 'ourCustomersWidget',
+            data: {
+                title: data?.title,
+                description: data?.description,
+                handovers: await Promise.all(
+                    data?.handovers?.map(async (item) => {
+                        return {
+                            title: item?.title,
+                            description: item?.description,
+                            yt_video_url: item?.video_url,
+                            images: await Promise.all(
+                                item?.images?.map(async (img) => {
+                                    return await GetImage(img.image)
+                                })
+                            ) || []
+                        }
+                    }) || []
+                ),
+                testimonials: data?.testimonials?.map((item) => {
+                    return {
+                        title: item?.title,
+                        description: item?.description,
+                        yt_video_url: item?.media_url
+                    }
+                }) || []
+            },
+            component: data?.__component
+        }
     },
     async trust(data) {
-        // return data
         return {
-            widget_type: 'trust',
+            id: data?.id,
+            widget_type: 'trustWidget',
             data: {
                 title: data?.title,
                 message: data?.message,
